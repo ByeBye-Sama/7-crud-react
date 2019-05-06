@@ -1,5 +1,5 @@
 import React from 'react';
-import { BrowserRouter as Router, Route} from "react-router-dom";
+import { HashRouter as Router, Route, Redirect, Switch } from "react-router-dom";
 
 import './assets/styles/main.scss';
 
@@ -20,9 +20,11 @@ export function App() {
       <Router>
         <Header />
         <Main>
-          <Route exact path="/" component={PageCreate} />
-          <Route path="/create/" component={PageCreate} />
-          <Route path="/users/" component={PageUsers} />
+          <Switch>
+            <Route path="/create" component={PageCreate} />
+            <Route exact path="/users" component={PageUsers} />
+            <Redirect exact from="/" to="/create" />
+          </Switch>
         </Main>
         <Footer />
       </Router>

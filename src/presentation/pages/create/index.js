@@ -1,15 +1,15 @@
-import React, { Component } from "react";
+import React from "react";
 
 import './create.scss';
-import {CreateUser} from '../../../containers/createUser/index';
+import { CreateUser } from '../../../containers/createUser';
 
-export class PageCreate extends Component {
-  render() {
-    return (
-      <div>
-        <br></br><br></br>
-        <CreateUser/>
-      </div>
-    );
-  }
+export function PageCreate(props) {
+  console.log('get props?', props);
+  return (
+    <div>
+      <br></br><br></br>
+      <CreateUser {...props} />
+    </div>
+  );
+
 }
