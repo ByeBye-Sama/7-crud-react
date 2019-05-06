@@ -15,7 +15,9 @@ export default function CardUser(props) {
 
   return (
     <React.Fragment>
-      <Link to={`/users/edit/${id}`}>Edit</Link>
+      <Link to={`/users/edit/${id}`}>
+      <button className="button is-warning">Edit</button>
+      </Link>
       <button className="button is-danger" onClick={() => { props.deleteUser(id) }}>Delete</button>
       <Link to={`/users/${id}`} className="card">
         <div className="card-image">
