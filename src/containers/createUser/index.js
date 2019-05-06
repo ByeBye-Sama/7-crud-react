@@ -8,9 +8,9 @@ export class CreateUser extends Component {
     this.state = {
       firstName: '',
       lastName: '',
-      git: '',
       email: '',
       phone: '',
+      country: '',
       photoURL: '',
       about: ''
     };
@@ -20,7 +20,7 @@ export class CreateUser extends Component {
   }
 
   changeHandler(event) {
-   
+
     const name = event.target.name;
     const value = event.target.value;
 
@@ -56,10 +56,17 @@ export class CreateUser extends Component {
         <div className="field is-horizontal">
           <div className="field-body">
             <div className="field-label is-normal">
-              <label className="label">Email</label>
+              <label className="label">Country</label>
             </div>
             <div className="field">
-              <input required className="input" type="email" placeholder="example@gmail.com" name="email" onChange={this.changeHandler} />
+              <div className="select is-fullwidth">
+                <select required className="country" name="country" onChange={this.changeHandler}>
+                  <option disabled defaultValue="">Country</option>
+                  <option value="Peru">Peru</option>
+                  <option value="Argentina">Argentina</option>
+                  <option value="Brazil">Brazil</option>
+                </select>
+              </div>
             </div>
             <div className="field-label is-normal">
               <label className="label">Cellphone</label>
@@ -71,12 +78,12 @@ export class CreateUser extends Component {
         </div>
         <div className="field is-horizontal">
           <div className="field-label is-normal">
-            <label className="label">GitHub</label>
+            <label className="label">Email</label>
           </div>
           <div className="field-body">
             <div className="field">
               <div className="control">
-                <input required className="input" type="url" placeholder="URL account" name="git" onChange={this.changeHandler} />
+                <input required className="input" type="email" placeholder="example@gmail.com" name="email" onChange={this.changeHandler} />
               </div>
             </div>
           </div>
