@@ -12,6 +12,7 @@ import {
 import {
   PageCreate,
   PageUsers,
+  PageEdit,
 } from './presentation/pages';
 
 export function App() {
@@ -23,6 +24,7 @@ export function App() {
           <Switch>
             <Route path="/create" component={PageCreate} />
             <Route exact path="/users" component={PageUsers} />
+            <Route path="/users/edit/:id" component={PageEdit} />
             <Redirect exact from="/" to="/create" />
           </Switch>
         </Main>

@@ -22,7 +22,6 @@ export class CreateUser extends Component {
   }
 
   changeHandler(event) {
-
     const name = event.target.name;
     const value = event.target.value;
 
@@ -44,7 +43,6 @@ export class CreateUser extends Component {
   }
 
   submitForm(event) {
-    console.log("state", this.state);
     event.preventDefault();
     this.createUser();
   }
